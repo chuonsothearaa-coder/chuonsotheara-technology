@@ -1,0 +1,950 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sotheara Technology</title>
+   <link rel="icon" href="logo.png"> 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-blue: #0056b3;
+        --accent-blue: #007bff;
+        --dark-black: #111111;
+        --light-black: #1a1a1a;
+        --pure-white: #ffffff;
+        --light-gray: #f8f9fa;
+        --medium-gray: #6c757d;
+        --border-color: #e9ecef;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        --shadow-hover: 0 10px 20px rgba(0, 86, 179, 0.15);
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: var(--dark-black);
+        background-color: var(--pure-white);
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        border: none;
+        font-size: 1rem;
+      }
+
+      .btn-primary {
+        background-color: var(--accent-blue);
+        color: var(--pure-white);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-blue);
+        transform: translateY(-2px);
+      }
+
+      .btn-block {
+        width: 100%;
+        text-align: center;
+      }
+
+      .header {
+        background-color: var(--dark-black);
+        color: var(--pure-white);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--pure-white);
+      }
+
+      .logo span {
+        color: var(--accent-blue);
+      }
+
+      .nav-menu ul {
+        display: flex;
+        gap: 25px;
+      }
+
+      .nav-menu a {
+        font-weight: 500;
+        transition: var(--transition);
+        font-size: 0.95rem;
+      }
+
+      .nav-menu a:hover {
+        color: var(--accent-blue);
+      }
+
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .search-box {
+        display: flex;
+        background: var(--light-black);
+        border-radius: 20px;
+        padding: 5px 15px;
+        border: 1px solid #333;
+      }
+
+      .search-box input {
+        background: transparent;
+        border: none;
+        color: var(--pure-white);
+        outline: none;
+        width: 150px;
+        font-size: 0.9rem;
+      }
+
+      .search-box button {
+        background: transparent;
+        border: none;
+        color: var(--medium-gray);
+        cursor: pointer;
+      }
+
+      .cart-btn {
+        background: transparent;
+        border: none;
+        color: var(--pure-white);
+        font-size: 1.2rem;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .cart-count {
+        position: absolute;
+        top: -8px;
+        right: -10px;
+        background: var(--accent-blue);
+        color: white;
+        font-size: 0.7rem;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      .hero {
+        height: 80vh;
+        min-height: 500px;
+        background: url("https://scontent.fpnh8-3.fna.fbcdn.net/v/t39.30808-6/721779204_1018778944023580_5482447439004672625_n.jpg?stp=dst-jpg_tt6&cstp=mx1611x656&ctp=s1611x656&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGpNRpPLKzBr40qsoxEd2AS-iBN9VBjH6D6IE31UGMfoGsUIkcIYwrFDeyj4FgL_RBNtt04KC8UZiH9bq86IXKg&_nc_ohc=rn12OYd1CRMQ7kNvwEI2TK5&_nc_oc=Adp73WIIGeB3jIdfRVN-G-YQ0S6-NT2AoBapRyyCToc1IQKHYrD4QinYrZ6R2gZMtZo&_nc_zt=23&_nc_ht=scontent.fpnh8-3.fna&_nc_gid=mnjsTFhpOxMEnP3Xt8u0sA&_nc_ss=7b2a8&oh=00_Af8DwLDhEu21wilzQYjxh6Ysd5IeVLSJS5JGD07Z_OccDA&oe=6A30B2B9")
+          center/cover no-repeat;
+        position: relative;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: var(--pure-white);
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 0, 0, 0.8) 0%,
+          rgba(0, 86, 179, 0.6) 100%
+        );
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+        animation: fadeInUp 0.8s ease;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+        animation: fadeInUp 1s ease;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+      .bg-light {
+        background-color: var(--light-gray);
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+        color: var(--dark-black);
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: var(--accent-blue);
+        margin: 15px auto 0;
+        border-radius: 2px;
+      }
+
+      /* --- Product Grid & Cards --- */
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 30px;
+      }
+
+      .product-card {
+        background: var(--pure-white);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        border: 1px solid var(--border-color);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .product-image {
+        height: 200px;
+        background: var(--light-gray);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .product-card:hover .product-image img {
+        transform: scale(1.05);
+      }
+
+      .product-info {
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .product-category {
+        font-size: 0.8rem;
+        color: var(--accent-blue);
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+
+      .product-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: var(--dark-black);
+      }
+
+      .product-specs {
+        font-size: 0.85rem;
+        color: var(--medium-gray);
+        margin-bottom: 15px;
+        flex-grow: 1;
+      }
+
+      .product-price {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--primary-blue);
+        margin-bottom: 15px;
+      }
+
+      .filters {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .filters select {
+        padding: 10px 15px;
+        border-radius: 6px;
+        border: 1px solid var(--border-color);
+        background: var(--pure-white);
+        font-family: inherit;
+        cursor: pointer;
+        min-width: 180px;
+      }
+      .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+      }
+
+      .info-item {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .info-item i {
+        font-size: 1.5rem;
+        color: var(--accent-blue);
+        margin-top: 5px;
+      }
+
+      .info-item h4 {
+        margin-bottom: 5px;
+      }
+      .info-item p {
+        color: var(--medium-gray);
+      }
+
+      .map-container {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+      .footer {
+        background: var(--dark-black);
+        color: var(--pure-white);
+        padding: 60px 0 20px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-brand h3 {
+        color: var(--accent-blue);
+        margin-bottom: 15px;
+      }
+      .footer-brand p {
+        color: #aaa;
+      }
+
+      .footer-links h4,
+      .footer-social h4 {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+      }
+
+      .footer-links ul li {
+        margin-bottom: 10px;
+      }
+      .footer-links a {
+        color: #aaa;
+        transition: var(--transition);
+      }
+      .footer-links a:hover {
+        color: var(--accent-blue);
+        padding-left: 5px;
+      }
+      .social-icons {
+        display: flex;
+        gap: 15px;
+      }
+      .social-icons a {
+        width: 40px;
+        height: 40px;
+        background: var(--light-black);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+      }
+
+      .social-icons a:hover {
+        background: var(--accent-blue);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      /* --- Responsive Design --- */
+      @media (max-width: 992px) {
+        .contact-wrapper {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header-container {
+          flex-direction: column;
+          height: auto;
+          padding: 15px 0;
+          gap: 15px;
+        }
+
+        .nav-menu ul {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+
+        .search-box {
+          display: none;
+        }
+        .hero-content h1 {
+          font-size: 2.2rem;
+        }
+        body,
+        html {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #ffffff;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-container">
+        <a href="#" class="logo">
+          <i class=""></i> Sotheara <span>Technology</span>
+        </a>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Laptops</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="Dev-Eng.html">Developer</a></li>
+            <li><a href="imdex-KH.html"><img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_Cambodia.svg" width="50" height="30"> </a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section id="home" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <h1>Welcome to Sotheara Technology.</h1>
+        <p>
+          Our store specializes in supplying and distributing high-quality technology products,
+           including gaming laptops.We are committed to providing our customers with genuine products, 
+           excellent quality, reasonable prices, and professional services.
+    </section>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">The King of High-Performance Laptops</h2>
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://dlcdnwebimgs.asus.com/gain/4BACD58E-1099-4B3A-B562-72AE90CA9CD2/w717/h525/fwebp/w273"
+                alt="ASUS ROG"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">ASUS Gaming</span>
+              <h3 class="product-title">ASUS ROG Strix G18</h3>
+              <p class="product-specs">
+                Intel® Core™ Ultra 9 Processor 275HX,NVIDIA® GeForce RTX™ 5090,
+                64GB RAM DDR5
+              </p>
+              <div class="product-price">$4,999</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://www.pbtech.co.nz/imgprod/N/B/NBKMSI182023.jpg?h=677316638"
+                alt="MSI TITAN"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">MSI Gaming</span>
+              <h3 class="product-title">MSI Titan 18</h3>
+              <p class="product-specs">
+                Intel® Core™ Ultra 9 processor 290HX Plus, 64GB RAM DDR5,NVIDIA®
+                GeForce RTX™ 5090
+              </p>
+              <div class="product-price">$4,999</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://m.media-amazon.com/images/I/710GYj3LnCL.jpg"
+                alt="Alienware Gaming "
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">Alienware Gaming </span>
+              <h3 class="product-title">Alienware 18 Area-51 Gaming</h3>
+              <p class="product-specs">
+                ntel® Core™ Ultra 9 290HX Plus, 24 cores,NVIDIA® GeForce RTX™
+                5090, 64GB DDR5
+              </p>
+              <div class="product-price">$4.999</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://p4-ofp.static.pub//fes/cms/2025/10/13/3ffohsu9g4gw37vffkbgm0guj3dmto915982.png?width=328&height=328"
+                alt="Lenovo Legion"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">Lenovo Legion</span>
+              <h3 class="product-title">Legion 9i</h3>
+              <p class="product-specs">
+                Intel® Core™ Ultra 9 275HX Processor,Intel® Core™ Ultra 9 275HX
+                Processor,32 GB DDR5-5200MT/s
+              </p>
+              <div class="product-price">$5,999</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="products" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title">
+          <img
+            src="data:image/png;base64,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"
+            alt="Lenovo Logo"
+            class="lenovo-logo"
+          />
+        </h2>
+        <div class="product-grid">
+          <!-- Laptops -->
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://p4-ofp.static.pub/fes/cms/2025/06/02/2w4pm648pssykh7itfm2qc08g83b1q961587.png"
+                alt="Lenovo Gaming"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">Lenovo Gaming</span>
+              <h3 class="product-title">Legion 5i</h3>
+              <p class="product-specs">
+                Intel® Core™  5 251HX Processor, NVIDIA® GeForce RTX™ 505
+                Laptop GPU 6GB GDDR7,16 GB DDR5-5600MT/s
+              </p>
+              <div class="product-price">$1,660</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://p4-ofp.static.pub/fes/cms/2025/06/02/2w4pm648pssykh7itfm2qc08g83b1q961587.png"
+                alt="Lenovo Gaming"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">Lenovo Gaming</span>
+              <h3 class="product-title">Legion 5i</h3>
+              <p class="product-specs">ntel® Core™ Ultra 7 251HX Processor, NVIDIA® GeForce RTX™ 5060
+                Laptop GPU 8GB GDDR7,16 GB DDR5-5600MT/s</p>
+              <div class="product-price">$2,959</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://p4-ofp.static.pub/fes/cms/2025/06/02/2w4pm648pssykh7itfm2qc08g83b1q961587.png"
+                alt="Legion 7i"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">Lenovo Gaming</span>
+              <h3 class="product-title">Legion 7i</h3>
+              <p class="product-specs">Intel® Core™ Ultra 7 255HX Processor,NVIDIA® GeForce RTX™ 5060 Laptop GPU 8GB GDDR7,16 GB DDR5-5600MT/s (SODIMM)</p>
+              <div class="product-price">$2,063</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://p4-ofp.static.pub/fes/cms/2025/06/02/2w4pm648pssykh7itfm2qc08g83b1q961587.png"
+                alt="Legion 7i"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">Laptop</span>
+              <h3 class="product-title">Legion 7i</h3>
+              <p class="product-specs">Intel® Core™ Ultra 9 275HX Processor ,NVIDIA® GeForce RTX™ 5070 Laptop GPU 8GB GDDR7 , 32 GB DDR5-5600MT/s (SODIMM)(2 x 16 GB) </p>
+              <div class="product-price">$2,839</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://soyacincau.com/wp-content/uploads/2021/04/210414-lenovo-legion-5-amd-7.jpg"
+                alt="Legion 7a"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">Lenovo Gaming</span>
+              <h3 class="product-title">Legion 7a</h3>
+              <p class="product-specs">Ryzen™ AI 7 450 Processor, NVIDIA® GeForce RTX™ 5060 Laptop GPU 8GB GDDR7 , 16GB RAM, 1TB SSD </p>
+              <div class="product-price">$1,299</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://soyacincau.com/wp-content/uploads/2021/04/210414-lenovo-legion-5-amd-7.jpg"
+                alt="Legion 7a"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">Lenovo Gaming</span>
+              <h3 class="product-title">Legion 7a</h3>
+              <p class="product-specs">Ryzen™ AI 7 450 Processor, NVIDIA® GeForce RTX™ 5060 Laptop GPU 8GB GDDR7 , 32GB RAM, 1TB SSD</p>
+              <div class="product-price">$2,099</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://soyacincau.com/wp-content/uploads/2021/04/210414-lenovo-legion-5-amd-7.jpg"
+                alt="Legion 7a"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">Lenovo Gaming</span>
+              <h3 class="product-title">Legion 7a</h3>
+              <p class="product-specs">Ryzen™ AI 5 450 Processor, NVIDIA® GeForce RTX™ 5060 Laptop GPU 8GB GDDR7 , 32GB RAM, 1TB SSD</p>
+              <div class="product-price">$1,799</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://soyacincau.com/wp-content/uploads/2021/04/210414-lenovo-legion-5-amd-7.jpg"
+                alt="Legion 7a"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">Lenovo Gaming</span>
+              <h3 class="product-title">Legion 7a</h3>
+              <p class="product-specs">Ryzen™ AI 9 450 Processor, NVIDIA® GeForce RTX™ 5060 Laptop GPU 8GB GDDR7 , 32GB RAM, 1TB SSD</p>
+              <div class="product-price">$3,099</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://soyacincau.com/wp-content/uploads/2021/04/210414-lenovo-legion-5-pro-1.jpg"
+                alt="Acer Predator"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">Lenovo Gaming</span>
+              <h3 class="product-title">Lenovo Legion 5 Pro specs</h3>
+              <p class="product-specs">Ryzen™ AI 9 450 Processor, NVIDIA® GeForce RTX™ 5060 Laptop GPU 8GB GDDR7 , 32GB RAM, 1TB SSD</p>
+              <div class="product-price">$1,399</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://soyacincau.com/wp-content/uploads/2021/04/210414-lenovo-legion-5-pro-1.jpg"
+                alt="Lenovo Gaming"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">Lenovo Gaming</span>
+              <h3 class="product-title">Lenovo Legion 5 Pro specs</h3>
+              <p class="product-specs">Ryzen™ AI 9 450 Processor, NVIDIA® GeForce RTX™ 5050 Laptop GPU 8GB GDDR7 , 16GB RAM, 512 SSD</p>
+              <div class="product-price">$1,899</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://soyacincau.com/wp-content/uploads/2021/04/210414-lenovo-legion-5-pro-1.jpg"
+                alt="Lenovo Gaming"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">Lenovo Gaming</span>
+              <h3 class="product-title">Lenovo Legion 5 Pro specs</h3>
+              <p class="product-specs">Ryzen™ AI 9 450 Processor, NVIDIA® GeForce RTX™ 5060 Laptop GPU 8GB GDDR7 , 16GB RAM, 512TB SSD</p>
+              <div class="product-price">$2,099</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://soyacincau.com/wp-content/uploads/2021/04/210414-lenovo-legion-5-pro-1.jpg"
+                alt="Lenovo Gaming"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">Lenovo Gaming</span>
+              <h3 class="product-title">Lenovo Legion 5 Pro specs</h3>
+              <p class="product-specs">Ryzen™ AI 9 450 Processor, NVIDIA® GeForce RTX™ 5060 Laptop GPU 8GB GDDR7 , 32GB RAM, 1TB SSD</p>
+              <div class="product-price">$2,599</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://soyacincau.com/wp-content/uploads/2021/04/210414-lenovo-legion-5-amd-2.jpg"
+                alt="Lenovo Gaming"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">Lenovo Gaming</span>
+              <h3 class="product-title">Lenovo Legion 7 Pro specs</h3>
+              <p class="product-specs">Ryzen™ AI 7 450 Processor, NVIDIA® GeForce RTX™ 5070 IT , GPU 8GB GDDR7 , 32GB RAM, 1TB SSD</p>
+              <div class="product-price">$3,449</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://soyacincau.com/wp-content/uploads/2021/04/210414-lenovo-legion-5-amd-2.jpg"
+                alt="Lenovo Gaming"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">Lenovo Gaming</span>
+              <h3 class="product-title">Lenovo Legion 7 Pro specs</h3>
+              <p class="product-specs">Ryzen™ AI 7 450 Processor, NVIDIA® GeForce RTX™ 5060 Laptop GPU 8GB GDDR7 , 32GB RAM, 1TB SSD</p>
+              <div class="product-price">$1,699</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://soyacincau.com/wp-content/uploads/2021/04/210414-lenovo-legion-5-amd-2.jpg"
+                alt="Lenovo Gaming"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">Lenovo Gaming</span>
+              <h3 class="product-title">Lenovo Legion 7 Pro specs</h3>
+              <p class="product-specs">Ryzen™ AI 7 450 Processor, NVIDIA® GeForce RTX™ 5070 Laptop GPU 8GB GDDR7 , 32GB RAM, 1TB SSD</p>
+              <div class="product-price">$2,799</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="https://soyacincau.com/wp-content/uploads/2021/04/210414-lenovo-legion-5-amd-2.jpg"
+                alt="Lenovo Gaming"
+              />
+            </div>
+            <div class="product-info">
+              <span class="product-category">Lenovo Gaming</span>
+              <h3 class="product-title">Lenovo Legion 7 Pro specs</h3>
+              <p class="product-specs">Ryzen™ AI 7 450 Processor, NVIDIA® GeForce RTX™ 5080 Laptop GPU 8GB GDDR7 , 32GB RAM, 1TB SSD</p>
+              <div class="product-price">$3,549</div>
+              <button class="btn btn-primary btn-block">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="contact" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <div class="info-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <h4>Address</h4>
+                <p>#123, Street 456, Phnom Penh, Cambodia</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <h4>Phone</h4>
+                <p>+855 12 345 678</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <h4>Email</h4>
+                <p>support@sothearatech.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.732845849828!2d104.9189!3d11.5564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDMzJzIzLjAiTiAxMDTCsDU1JzA4LjAiRQ!5e0!3m2!1sen!2skh!4v1600000000000!5m2!1sen!2skh"
+              width="100%"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container footer-content">
+        <div class="footer-brand">
+          <h3>Sotheara Technology</h3>
+          <p>Your Trusted Technology Partner since 2020.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="Dev-Eng.html">Deverloper</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/Jame2020" aria-label="Facebook"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="https://t.me/Chuonsotheara" aria-label="Telegram"
+              ><i class="fa-brands fa-telegram"></i
+            ></a>
+            <a href="#" aria-label="TikTok"
+              ><i class="fa-brands fa-tiktok"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Sotheara Technology, Your Trusted Choice | Thank you for supporting us.</p>
+      </div>
+    </footer>
+  </body>
+</html>
